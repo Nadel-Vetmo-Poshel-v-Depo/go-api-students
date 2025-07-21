@@ -19,23 +19,30 @@
 
 ## 📦 Установка и запуск
 
-### 1. Клонировать репозиторий
 
+
+## 1. Клонировать репозиторий
 ```bash
 git clone https://github.com/yourname/go-api-students.git
 cd go-api-students
+
+
 2. Создать .env файл
 DB_USER=postgres
 DB_PASSWORD=postgres
 DB_NAME=testdb
 DB_HOST=localhost
 DB_PORT=5432
+
+
 3. Запустить PostgreSQL через Docker
 docker run --name pg-go-api \
   -e POSTGRES_PASSWORD=postgres \
   -e POSTGRES_DB=testdb \
   -p 5432:5432 \
   -d postgres
+
+
 4. Создать таблицу в БД
 CREATE TABLE students (
   id SERIAL PRIMARY KEY,
@@ -43,5 +50,7 @@ CREATE TABLE students (
   age INT,
   enrolled BOOLEAN DEFAULT true
 );
+
+
 5. Запустить сервер
 go run ./cmd/api
